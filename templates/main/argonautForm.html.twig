@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les Argonautes{% endblock %}
+
+{% block body %}
+<!-- Main section -->
+<main>
+    <!-- New member form -->
+    <div class="col-12 col-md-6 offset-md-3 mt-5 p-5">
+        <div class="col-12"><h2>Ajouter un(e) Argonaute</h2></div>
+        <div class="col-md-12 mt-5 ml-4">{{ form(newArgonautForm) }}</div>
+    </div>
+    <!-- Member list -->
+    <h2>Membres de l'équipage</h2>
+    <section class="member-list">
+        <div class="container">
+            <div class="row my-5 offset-2">
+                {% for ArgonautUser in ArgonautUsers %}
+                    <div class="col-4 my-2">
+                        <div class="member-item">{{ArgonautUser.name}}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
